@@ -16,12 +16,12 @@ echo "---------------------------------------"
 echo ""
 
 # 2: Move to project source root folder
-echo "Step 2: Move to project source root folder..."
-cd $PROJECT_NAME
+# echo "Step 2: Move to project source root folder..."
+# cd $PROJECT_NAME
 
-echo ""
-echo "---------------------------------------"
-echo ""
+#echo ""
+#echo "---------------------------------------"
+#echo ""
 
 # 3: Add dependencies
 echo "Step 3.1: get go-bindata"
