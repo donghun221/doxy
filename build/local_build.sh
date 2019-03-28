@@ -1,5 +1,20 @@
 #!/bin/bash
 
+# 0: check env
+if [ -z $1 ];then
+	echo "usage:mac|linux|windows"
+	exit -1
+fi
+
+if [ $1 == "windows"];then
+	GS="windows"
+elif [ $1 == "mac" ];then
+	GS="darwin"
+else
+	GS="linux"
+fi
+
+echo "machine env: "$GS
 # 1: Declare to project root
 echo "Step 1: Declare ENV ..."
 export PROJECT_NAME=HelloTencent
@@ -13,6 +28,7 @@ echo "PROJECT_PATH = $PROJECT_PATH"
 
 # 2: Move to project source root folder
 echo "Step 2: Move to project source root folder..."
+cp -r ../../$PROJECT_NAME $GOPATH/src/$PROJECT_NAME
 cd $GOPATH/src/$PROJECT_NAME
 
 
@@ -39,13 +55,13 @@ go-bindata --nocompress -pkg swagger -o examples/ui/data/swagger/datafile.go thi
 
 # 4: Build main file
 echo "Step 4.1: Build main file at internal/main.go ..."
-go build -o HelloTencent internal/main.go
+GOOS=$GS GOARCH=amd64 go build -o HelloTencent internal/main.go
 
 echo "Step 4.2: Build common service client file at examples/common_service_client.go ..."
-go build -o CommonClient examples/common_service_client.go
+GOOS=$GS GOARCH=amd64 go build -o CommonClient examples/common_service_client.go
 
 echo "Step 4.3: Build common service client file at examples/common_service_web.go ..."
-go build -o CommonWeb examples/common_service_web.go
+GOOS=$GS GOARCH=amd64 go build -o CommonWeb examples/common_service_web.go
 
 # 5: Make target package
 echo "Step 5: Make target package ..."

@@ -17,7 +17,7 @@ import (
 )
 
 var (
-	commonEndpoint = flag.String("commonservice_endpoint", "localhost:19270", "endpoint of Common gRPC Service")
+	commonEndpoint = flag.String("commonservice_endpoint", "0.0.0.0:19270", "endpoint of Common gRPC Service")
 )
 
 func main() {
@@ -34,7 +34,7 @@ func Run() (error) {
 	httpmux := newHttpServer(gwmux)
 
 	log.Print("Common gRPC Server gateway start at port 1984...")
-	http.ListenAndServe(":1984", httpmux)
+	http.ListenAndServe("0.0.0.0:1984", httpmux)
 	return nil
 }
 

@@ -35,7 +35,8 @@ const (
 	PONG string = "PONG"
 
 	// Cli related
-	LOCAL_HOST string = "localhost"
+	//LOCAL_HOST string = "localhost"
+	LOCAL_HOST string = "0.0.0.0"
 
 	// symbol related
 	COMMA string = ","
