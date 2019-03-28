@@ -16,7 +16,7 @@ spec:
         app: hello-tencent
     spec:
       containers:
-        - image: 'index.docker.io/dongxuny/hellotencent:v2'
+        - image: 'index.docker.io/dongxuny/hellotencent:v5'
           imagePullPolicy: Always
           name: hello-tencent
           resources:
