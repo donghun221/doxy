@@ -33,12 +33,12 @@ echo "Step 4: Clear project path, Skip this in this demo version ..."
 # echo ""
 
 ########## 5: Git Clone
-echo "Step 5: Git Cloning, Skip this in this demo version, use pull --rebase ..."
+# echo "Step 5: Git Cloning, Skip this in this demo version, use pull --rebase ..."
 # git clone https://github.com/donghun221/HelloTencent.git
-cd $PROJECT_PATH
-git pull --rebase
+# cd $PROJECT_PATH
+# git pull --rebase
 
-echo "---------------------------------------"
+# echo "---------------------------------------"
 
 ########## 6: Compile proto file
 echo "Step 6.1: Compile proto file at api/*.proto ..."
