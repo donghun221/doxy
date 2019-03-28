@@ -2,24 +2,24 @@ apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   labels:
-    app: HelloTencent
-  name: HelloTencent
+    app: hello-tencent
+  name: hello-tencent
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: HelloTencent
+      app: hello-tencent
   template:
     metadata:
       labels:
-        app: HelloTencent
+        app: hello-tencent
     spec:
       containers:
-        - image: index.docker.io/dongxuny/hellotencent
+        - image: 'index.docker.io/dongxuny/hellotencent:v3'
           imagePullPolicy: Always
           name: hello-tencent
           resources:
             limits:
               cpu: 500m
-              memory: 250Mi
+              memory: 2048Mi
