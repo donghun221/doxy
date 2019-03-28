@@ -19,13 +19,13 @@
 # echo "---------------------------------------"
 
 ########## 3: Move to PROJECT_DIR
-echo "Step 3: Move to project directory ..."
-cd $PROJECT_DIR
+# echo "Step 3: Move to project directory ..."
+# cd $PROJECT_DIR
 
-echo "---------------------------------------"
+# echo "---------------------------------------"
 
 ########## 4: Clear PROJECT_PATH
-echo "Step 4: Clear project path, Skip this in this demo version ..."
+# echo "Step 4: Clear project path, Skip this in this demo version ..."
 # rm -rf $PROJECT_PATH
 
 # echo ""
