@@ -66,7 +66,7 @@ func (service *HelloTencentService) HelloTencent(ctx context.Context, request *a
 	basicLoggerFields := MakeBasicLoggerFields("GC", request.GetHeader().RequestId, remoteAddr)
 	logger.WithFields(basicLoggerFields).Infof("Received GC request...")
 
-	// Invoke GC
+	// TODO: Implement your own logic
 	event.StartTimer("HelloTencent")
 	message := "Hello, " + request.GetMessage()
 	event.EndTimer("HelloTencent")
