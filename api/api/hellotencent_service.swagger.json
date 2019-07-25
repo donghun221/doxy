@@ -1,0 +1,116 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "api/hellotencent_service.proto",
+    "version": "version not set"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/HelloTencent": {
+      "post": {
+        "summary": "HelloTencent Stub",
+        "operationId": "HelloTencent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiHelloTencentResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiHelloTencentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "HelloTencentService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "apiHelloTencentRequest": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "$ref": "#/definitions/apiRequestHeader"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "apiHelloTencentResponse": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "$ref": "#/definitions/apiResponseHeader"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "apiRequestHeader": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string"
+        },
+        "start_time": {
+          "type": "string",
+          "format": "uint64"
+        }
+      }
+    },
+    "apiResponseHeader": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string"
+        },
+        "resp_time": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "ret_code": {
+          "$ref": "#/definitions/apiRetCode"
+        },
+        "err_msg": {
+          "type": "string"
+        },
+        "params": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "apiRetCode": {
+      "type": "string",
+      "enum": [
+        "OK",
+        "FAIL",
+        "ERROR"
+      ],
+      "default": "OK",
+      "title": "- OK: Please do not modify bellow error codes!!!"
+    }
+  }
+}
